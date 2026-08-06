@@ -1,0 +1,88 @@
+The original Any2Full ViT-L weights required for retraining are available from:
+https://github.com/zhiyuandaily/Any2Full
+
+## Spall-to-Full checkpoint
+
+- Baidu Netdisk: https://pan.baidu.com/s/1lBauxafJxa16T1QPokWPlw
+- Extraction code: yh8s
+
+
+## Using the 1036 input-size model
+
+### Training: `train_spall2full.py`
+
+1. Change:
+
+```python
+EXPECTED_SIZE = 1456
+```
+
+to:
+
+```python
+EXPECTED_SIZE = 1036
+```
+
+2. In `build_model()`, change:
+
+```python
+args = type("Args", (), {
+    "stage": 1,
+    "init_scailing": True,
+    "max_depth": 2e3,
+    "min_depth": 1e-6,
+})()
+```
+
+to:
+
+```python
+args = type("Args", (), {
+    "stage": 1,
+    "init_scailing": True,
+    "max_depth": 2e3,
+    "min_depth": 1e-6,
+    "model_input_size": EXPECTED_SIZE,
+})()
+```
+
+No other input-size-related changes are required for training.
+
+
+### Evaluation: `test_spall_to_full.py`
+
+No source-code change is required. Run the test with:
+
+```bash
+--model_input_size 1036
+```
+
+and use the checkpoint trained at 1036.
+
+
+### Model: `model/ours/spall_to_full.py`
+
+No change is required. Keep:
+
+```python
+self.patch_size = 14
+```
+
+unchanged. The `resize_lower_size=518` default in `resize_to_multiple()` also does not need to be changed because `forward()` explicitly passes `model_input_size`.
+
+
+## Using the 518 input-size model
+
+Follow the same procedure as above, replacing `1036` with `518`:
+
+```python
+EXPECTED_SIZE = 518
+```
+
+and evaluate with:
+
+```bash
+--model_input_size 518
+```
+
+Use the checkpoint trained at 518. Keep `self.patch_size = 14` unchanged.
