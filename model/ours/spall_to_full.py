@@ -302,16 +302,15 @@ class Any2Full(nn.Module):
 
         return torch.zeros((h, w), device=device, dtype=torch.long)
 
-
     def _build_local_residual_features(self, pred_i, ls_i, rgb_i, eps=1e-6, std_win=7):
         """
-       """Construct features for local KDTree-based residual retrieval."""
+        Construct features for local KDTree-based residual retrieval.
 
-        注意：
-        - 不读取 residual_use_normalized_features；
-        - x,y 固定为 [-1,1]；
-        - ls / grad / lap / std 不在这里 min-max；
-        - 后续 KDTree 分支内部仍会按 Key 统计量做 mean/std 标准化。
+        The residual_use_normalized_features switch is not used here.
+        Spatial coordinates x and y are fixed to [-1, 1]. The LS, gradient,
+        Laplacian, and local-standard-deviation channels are not min-max
+        normalized here. Feature standardization is applied later using
+        mean and standard deviation statistics from the KDTree key set.
         """
         device = pred_i.device
         dtype = pred_i.dtype
