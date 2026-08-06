@@ -398,14 +398,12 @@ class Any2Full(nn.Module):
             chunk_size=4096
     ):
         """
-"""Estimate local residual corrections using KDTree retrieval and top-k attention."""
+        Estimate local residual corrections using KDTree retrieval and top-k attention.
 
-        修改点：
-        - 不使用 local_known_density_gate；
-        - Query 为当前 mask 类型下所有像素；
-        - 特征构造使用代码2版本；
-        - 不理会 residual_use_normalized_features 开关；
-        - 其余 KDTree、pred_tol、topk、attention 逻辑保持。
+        No local known-density gate is applied. All pixels of the current
+        semantic type are used as queries. Retrieval features are constructed
+        by _build_local_residual_features. KDTree retrieval, prediction-tolerance
+        filtering, top-k selection, and attention weighting are then applied.
         """
         device = pred_i.device
         dtype = pred_i.dtype
