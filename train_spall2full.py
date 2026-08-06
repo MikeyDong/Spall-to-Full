@@ -37,7 +37,7 @@ VAL_MASK_ONEHOT_DIR = DATA_ROOT / "Val" / "mask_onehot"
 CHECKPOINT_PATH = Path("checkpoints") / "Any2Full_vitl.pth.tar"
 OUTPUT_DIR = Path("outputs")
 
-sys.path.insert(0, REPO_ROOT)
+
 
 
 # ============================================================
