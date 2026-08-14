@@ -26,13 +26,16 @@ from model.ours.spall_to_full import Any2Full
 # ============================================================
 DATA_ROOT = Path("data")
 
-TRAIN_RGB_DIR = DATA_ROOT / "rgb"
-TRAIN_DEPTH_DIR = DATA_ROOT / "Depth"
-TRAIN_MASK_ONEHOT_DIR = DATA_ROOT / "mask_onehot"
+TRAIN_ROOT = DATA_ROOT / "Train"
+VAL_ROOT = DATA_ROOT / "Val"
 
-VAL_RGB_DIR = DATA_ROOT / "Val" / "rgb"
-VAL_DEPTH_DIR = DATA_ROOT / "Val" / "Depth"
-VAL_MASK_ONEHOT_DIR = DATA_ROOT / "Val" / "mask_onehot"
+TRAIN_RGB_DIR = TRAIN_ROOT / "RGB"
+TRAIN_DEPTH_DIR = TRAIN_ROOT / "Depth"
+TRAIN_MASK_ONEHOT_DIR = TRAIN_ROOT / "One hot Mask"
+
+VAL_RGB_DIR = VAL_ROOT / "RGB"
+VAL_DEPTH_DIR = VAL_ROOT / "Depth"
+VAL_MASK_ONEHOT_DIR = VAL_ROOT / "One hot Mask"
 
 CHECKPOINT_PATH = Path("checkpoints") / "Any2Full_vitl.pth.tar"
 OUTPUT_DIR = Path("outputs")
@@ -861,6 +864,7 @@ def build_model(device: torch.device) -> nn.Module:
         "init_scailing": True,
         "max_depth": 2e3,
         "min_depth": 1e-6,
+        "model_input_size": EXPECTED_SIZE,
     })()
 
     model = Any2Full(encoder="vitl", da_ckpt_path=None, args=args)
@@ -1023,7 +1027,7 @@ def main() -> None:
         is_train=False,
     )
 
-    print(f"[Info] Train={len(train_dataset)}, Val={len(val_dataset)}")
+    print(f"[Info] Train images={len(train_dataset.samples)}, Val images={len(val_dataset.samples)}")
     print(f"[Info] Train_Path:")
     print(f"        RGB   : {TRAIN_RGB_DIR}")
     print(f"        Depth : {TRAIN_DEPTH_DIR}")
