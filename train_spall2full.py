@@ -127,11 +127,11 @@ def list_triplets(rgb_dir: Path, depth_dir: Path, mask_dir: Path) -> List[Tuple[
 def prepare_physical_train_val_split() -> None:
     train_rgb_dir = Path(TRAIN_RGB_DIR)
     train_depth_dir = Path(TRAIN_DEPTH_DIR)
-    train_mask_dir = Path(TRAIN_RAW_MASK_DIR)
+    train_mask_dir = Path(TRAIN_MASK_ONEHOT_DIR)
 
     val_rgb_dir = Path(VAL_RGB_DIR)
     val_depth_dir = Path(VAL_DEPTH_DIR)
-    val_mask_dir = Path(VAL_RAW_MASK_DIR)
+    val_mask_dir = Path(VAL_MASK_ONEHOT_DIR)
 
     val_rgb_dir.mkdir(parents=True, exist_ok=True)
     val_depth_dir.mkdir(parents=True, exist_ok=True)
