@@ -24,11 +24,12 @@ https://github.com/MikeyDong/Spall-Depth-and-area-measurement-from-Single-RGBD-i
 
 | Item | Location | Access code / expected local path |
 | --- | --- | --- |
-| Source code | [GitHub repository](https://github.com/MikeyDong/Spall-to-Full) | Clone as described below. |
 | Training and validation data | [Baidu Netdisk](https://pan.baidu.com/s/1CKtUdeUk33h2RJbShvrsAQ) | Code: `54hj` |
 | Test data | [Baidu Netdisk](https://pan.baidu.com/s/1THFZ6zij-hYK9cplbhpjfA) | Code: `123h` |
 | Final Spall-to-Full checkpoint | [Baidu Netdisk](https://pan.baidu.com/s/1lBauxafJxa16T1QPokWPlw) | Code: `yh8s`; |
 | Any2Full ViT-L initialization checkpoint | [Official Any2Full repository](https://github.com/zhiyuandaily/Any2Full) | Save as `checkpoints/Any2Full_vitl.pth.tar` for training. |
+| Real world test | [Baidu Netdisk](https://pan.baidu.com/s/1csMPP1oGWuDfeXJL-smODg)) | Code: `43ja`; In this test set, the burst regions
+were designated as ROIs (pixel value = 2), and only the pixels within these regions were used to compute the error metrics.|
 
 
 
