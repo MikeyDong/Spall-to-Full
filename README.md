@@ -27,7 +27,7 @@ https://github.com/MikeyDong/Spall-Depth-and-area-measurement-from-Single-RGBD-i
 |Source code|[GitHub repository](https://github.com/MikeyDong/Spall-to-Full)|Clone as described below.|
 |Training and validation data|[Baidu Netdisk](https://pan.baidu.com/s/1CKtUdeUk33h2RJbShvrsAQ)|Code: `54hj`|
 |Test data|[Baidu Netdisk](https://pan.baidu.com/s/1THFZ6zij-hYK9cplbhpjfA)|Code: `123h`|
-|Final Spall-to-Full checkpoint|[Baidu Netdisk](https://pan.baidu.com/s/1lBauxafJxa16T1QPokWPlw)|Code: `yh8s`; place under `checkpoints/` and pass its filename to `--checkpoint`.|
+|Final Spall-to-Full checkpoint|[Baidu Netdisk](https://pan.baidu.com/s/1lBauxafJxa16T1QPokWPlw)|Code: `yh8s`;|
 |Any2Full ViT-L initialization checkpoint|[Official Any2Full repository](https://github.com/zhiyuandaily/Any2Full)|Save as `checkpoints/Any2Full\\\_vitl.pth.tar` for training.|
 
 
