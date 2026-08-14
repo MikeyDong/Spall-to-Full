@@ -9,6 +9,6 @@ Test set：
 - Extraction code: 123h 
 
 Training set:
-- Baidu Netdisk: https://pan.baidu.com/s/1CKtUdeUk33h2RJbShvrsAQ
-- Extraction code: 54hj 
+- Baidu Netdisk:  https://pan.baidu.com/s/1Dr_hR4RzvtUtIg_Hd-QOsw
+- Extraction code: sfa8  
 
