@@ -35,7 +35,7 @@ import matplotlib.pyplot as plt
 from PIL import Image
 from torchvision import transforms as T
 
-from model.ours.spall_to_full import Any2Full
+from model.ours.spall_to_full_inference import Any2Full
 
 # =========================
 # 1. Command-line arguments

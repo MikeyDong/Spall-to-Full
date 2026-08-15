@@ -20,27 +20,51 @@ from torch.utils.data import Dataset, DataLoader
 import torchvision.transforms as T
 import torchvision.transforms.functional as TF
 from tqdm import tqdm
-from model.ours.spall_to_full import Any2Full 
+from model.ours.spall_to_full_train import Any2Full
 # ============================================================
 # 1. Path
 # ============================================================
-DATA_ROOT = Path("data")
+# DATA_ROOT = Path("data")
 
-TRAIN_ROOT = DATA_ROOT / "Train"
+# TRAIN_ROOT = DATA_ROOT / "Train"
+# VAL_ROOT = DATA_ROOT / "Val"
+
+# TRAIN_RGB_DIR = TRAIN_ROOT / "RGB"
+# TRAIN_DEPTH_DIR = TRAIN_ROOT / "Depth"
+# TRAIN_MASK_ONEHOT_DIR = TRAIN_ROOT / "One hot Mask"
+
+# VAL_RGB_DIR = VAL_ROOT / "RGB"
+# VAL_DEPTH_DIR = VAL_ROOT / "Depth"
+# VAL_MASK_ONEHOT_DIR = VAL_ROOT / "One hot Mask"
+
+# CHECKPOINT_PATH = Path("checkpoints") / "Any2Full_vitl.pth.tar"
+# OUTPUT_DIR = Path("outputs")
+
+# ============================================================
+# 1. Path
+# ============================================================
+DATA_ROOT = Path(
+    "/home/featurize/work/20260104Spalling_Seg/新数据集用于深度估计/全尺寸数据集"
+)
+
+TRAIN_ROOT = DATA_ROOT
 VAL_ROOT = DATA_ROOT / "Val"
 
-TRAIN_RGB_DIR = TRAIN_ROOT / "RGB"
+TRAIN_RGB_DIR = TRAIN_ROOT / "rgb"
 TRAIN_DEPTH_DIR = TRAIN_ROOT / "Depth"
-TRAIN_MASK_ONEHOT_DIR = TRAIN_ROOT / "One hot Mask"
+TRAIN_MASK_ONEHOT_DIR = TRAIN_ROOT / "mask_onehot"
 
-VAL_RGB_DIR = VAL_ROOT / "RGB"
+VAL_RGB_DIR = VAL_ROOT / "rgb"
 VAL_DEPTH_DIR = VAL_ROOT / "Depth"
-VAL_MASK_ONEHOT_DIR = VAL_ROOT / "One hot Mask"
+VAL_MASK_ONEHOT_DIR = VAL_ROOT / "mask_onehot"
 
-CHECKPOINT_PATH = Path("checkpoints") / "Any2Full_vitl.pth.tar"
-OUTPUT_DIR = Path("outputs")
+CHECKPOINT_PATH = Path(
+    "/home/featurize/work/20260104Spalling_Seg/新数据集用于深度估计/Any2Full_vitl.pth.tar"
+)
 
-
+OUTPUT_DIR = Path(
+    "/home/featurize/work/20260104Spalling_Seg/新数据集用于深度估计/CheckPoint_MaskRouting_V3_4"
+)
 
 
 # ============================================================
