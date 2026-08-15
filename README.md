@@ -11,6 +11,10 @@ https://github.com/MikeyDong/Spall-Depth-and-area-measurement-from-Single-RGBD-i
 
 ![Spall-to-Full overview](Image.svg)
 
+## Overall architecture
+
+![Overall Architecture](./Overall%20Architecture.png)
+
 ## Repository contents
 
 | Path | Purpose |
