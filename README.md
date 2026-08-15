@@ -230,7 +230,7 @@ ROI masks, and final 1456 checkpoint, the manuscript reports:
 | 60% | 6.0 | 13.0 |
 | 80% | 7.8 | 15.9 |
 
-Reproducibility note. Minor deviations from the manuscript values may occur across hardware and software environments owing to differences in floating-point computation and GPU execution; under otherwise identical evaluation settings, the reproduced MAE values are expected to remain within approximately ±1 mm of the reported values.
+**Reproducibility note.** Minor deviations from the manuscript values may occur across hardware and software environments owing to differences in floating-point computation and GPU execution; under otherwise identical evaluation settings, the reproduced MAE values are expected to remain within approximately ±1 mm of the reported values.
 
 ## Using another model input size
 
