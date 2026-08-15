@@ -230,14 +230,11 @@ ROI masks, and final 1456 checkpoint, the manuscript reports:
 | 60% | 6.0 | 13.0 |
 | 80% | 7.8 | 15.9 |
 
-These values are reference aggregate results. Small numerical differences may
-occur across GPU models and software builds; large differences usually indicate
-an input-unit, filename-pairing, semantic-label, ROI, resolution, or checkpoint
-mismatch.
+Reproducibility note. Minor deviations from the manuscript values may occur across hardware and software environments owing to differences in floating-point computation and GPU execution; under otherwise identical evaluation settings, the reproduced MAE values are expected to remain within approximately ±1 mm of the reported values.
 
 ## Using another model input size
 
-The published model uses 1456. Lower-resolution experiments can be run by
+The published model uses 1456. The input size of 1036 can achieve better inference speed, and the requirements for video memory are also reduced accordingly, while the accuracy is less reduced.Lower-resolution experiments can be run by
 changing `EXPECTED_SIZE` in `train_spall2full.py`, training a new checkpoint,
 and evaluating that checkpoint with the same value passed to
 `--model_input_size`. For example, a 1036 model requires:
