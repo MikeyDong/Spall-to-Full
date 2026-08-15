@@ -29,7 +29,7 @@ https://github.com/MikeyDong/Spall-Depth-and-area-measurement-from-Single-RGBD-i
 | Final Spall-to-Full checkpoint | [Baidu Netdisk](https://pan.baidu.com/s/1lBauxafJxa16T1QPokWPlw) | Code: `yh8s`; |
 | Any2Full ViT-L initialization checkpoint | [Official Any2Full repository](https://github.com/zhiyuandaily/Any2Full) | Save as `checkpoints/Any2Full_vitl.pth.tar` for training. |
 | Real world test | [Baidu Netdisk](https://pan.baidu.com/s/1csMPP1oGWuDfeXJL-smODg) | Code: `43ja`; in this test set, the burst regions were designated as ROIs (`pixel value = 2`), and only the pixels within these regions were used to compute the error metrics. |
-
+| Complete archived release | [Zenodo](https://zenodo.org/records/21948319) | Contains the same training and validation data, quantitative test data, final Spall-to-Full checkpoint, and real-world tunnel test data as the corresponding Baidu Netdisk links above. |
 
 
 ## Environment and installation
@@ -144,6 +144,7 @@ The saved checkpoint dictionaries contain `model_state`, `optimizer_state`,
 script accepts this format directly.
 
 Please use the Last model as the final model and conduct testing.
+**Expected run time.** On the reported device, a complete 30-epoch training run takes approximately 30–35 hours.
 
 ## Evaluation and testing
 
@@ -196,6 +197,8 @@ python test_spall_to_full.py \
 Use the default `1.0` when the files already store millimetres. For example, use
 `1000` only if an integer image stores 1000 units per millimetre. Run
 `python test_spall_to_full.py --help` for all optional arguments.
+
+**Expected run time.** On the same system, evaluation of the released 26-image test set under all three valid-depth deletion ratios takes approximately 2–3 hours.
 
 ### 3. Expected outputs
 
